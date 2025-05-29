@@ -1,0 +1,11 @@
+Copyright (c) 2025 Divested Computing Group
+
+Below are the license mappings for all of the files found in this repository.
+All attempts have been made to ensure accuracy of the corresponding license files.
+If you've found an issue please file an issue or pull request.
+
+assets/css/mini-*.min.css - MIT - v3.0.1 - https://github.com/Chalarangelo/mini.css
+assets/fonts/fira* - OFL - https://github.com/mozilla/Fira
+[EVERYTHING ELSE] - AGPL-3.0-or-later
+
+Please see the included LICENSE.* files for the corresponding full license texts.

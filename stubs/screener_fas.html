@@ -1,0 +1,148 @@
+				<div class="card fluid" id="fas" data-pagefind-ignore="all">
+					<h2 class="h2o">Fatigue Assessment Scale (FAS)</h2>
+					<ul>
+						<li>Summary: TODO</li>
+						<li>Author: Michielsen, H. J., De Vries, J., & Van Heck, G. L. (2003).</li>
+						<li>License: TODO</li>
+						<li>Sources: <a href="https://novopsych.com/assessments/health/fatigue-assessment-scale-fas/" target="_blank" rel="nofollow noopener noreferrer">overview</a></li>
+						<li>Last updated: 2025/05/28</li>
+					</ul>
+					<div class="section" id="questions">
+						<h3 class="h3o">Questions<a href="#questions">¶</a></h3>
+						<p>The following ten statements refer to how you usually feel. Please give an answer to each question, even if you do not have any complaints at the moment.</p>
+						<form id="questions_real">
+							<p>1. I am bothered by fatigue<br>
+							<input type="radio" name="q1" value="1" required> never<br>
+							<input type="radio" name="q1" value="2" required> sometimes<br>
+							<input type="radio" name="q1" value="3" required> regularly<br>
+							<input type="radio" name="q1" value="4" required> often<br>
+							<input type="radio" name="q1" value="5" required> always
+							</p>
+							<hr>
+
+							<p>2. I get tired very quickly<br>
+							<input type="radio" name="q2" value="1" required> never<br>
+							<input type="radio" name="q2" value="2" required> sometimes<br>
+							<input type="radio" name="q2" value="3" required> regularly<br>
+							<input type="radio" name="q2" value="4" required> often<br>
+							<input type="radio" name="q2" value="5" required> always
+							</p>
+							<hr>
+
+							<p>3. I don't do much during the day<br>
+							<input type="radio" name="q3" value="1" required> never<br>
+							<input type="radio" name="q3" value="2" required> sometimes<br>
+							<input type="radio" name="q3" value="3" required> regularly<br>
+							<input type="radio" name="q3" value="4" required> often<br>
+							<input type="radio" name="q3" value="5" required> always
+							</p>
+							<hr>
+
+							<p>4. I have enough energy for everyday life<br>
+							<input type="radio" name="q4" value="5" required> never<br>
+							<input type="radio" name="q4" value="4" required> sometimes<br>
+							<input type="radio" name="q4" value="3" required> regularly<br>
+							<input type="radio" name="q4" value="2" required> often<br>
+							<input type="radio" name="q4" value="1" required> always
+							</p>
+							<hr>
+
+							<p>5. Physically, I feel exhausted<br>
+							<input type="radio" name="q5" value="1" required> never<br>
+							<input type="radio" name="q5" value="2" required> sometimes<br>
+							<input type="radio" name="q5" value="3" required> regularly<br>
+							<input type="radio" name="q5" value="4" required> often<br>
+							<input type="radio" name="q5" value="5" required> always
+							</p>
+							<hr>
+
+							<p>6. I have problems to start things<br>
+							<input type="radio" name="q6" value="1" required> never<br>
+							<input type="radio" name="q6" value="2" required> sometimes<br>
+							<input type="radio" name="q6" value="3" required> regularly<br>
+							<input type="radio" name="q6" value="4" required> often<br>
+							<input type="radio" name="q6" value="5" required> always
+							</p>
+							<hr>
+
+							<p>7. I have problems to think clearly<br>
+							<input type="radio" name="q7" value="1" required> never<br>
+							<input type="radio" name="q7" value="2" required> sometimes<br>
+							<input type="radio" name="q7" value="3" required> regularly<br>
+							<input type="radio" name="q7" value="4" required> often<br>
+							<input type="radio" name="q7" value="5" required> always
+							</p>
+							<hr>
+
+							<p>8. I feel no desire to do anything<br>
+							<input type="radio" name="q8" value="1" required> never<br>
+							<input type="radio" name="q8" value="2" required> sometimes<br>
+							<input type="radio" name="q8" value="3" required> regularly<br>
+							<input type="radio" name="q8" value="4" required> often<br>
+							<input type="radio" name="q8" value="5" required> always
+							</p>
+							<hr>
+
+							<p>9. Mentally, I feel exhausted<br>
+							<input type="radio" name="q9" value="1" required> never<br>
+							<input type="radio" name="q9" value="2" required> sometimes<br>
+							<input type="radio" name="q9" value="3" required> regularly<br>
+							<input type="radio" name="q9" value="4" required> often<br>
+							<input type="radio" name="q9" value="5" required> always
+							</p>
+							<hr>
+
+							<p>10. When I am doing something, I can concentrate quite well<br>
+							<input type="radio" name="q10" value="5" required> never<br>
+							<input type="radio" name="q10" value="4" required> sometimes<br>
+							<input type="radio" name="q10" value="3" required> regularly<br>
+							<input type="radio" name="q10" value="2" required> often<br>
+							<input type="radio" name="q10" value="1" required> always
+							</p>
+							<hr>
+
+							<input type="submit" value="Score">
+						</form>
+					</div>
+					<div class="section" id="results">
+						<h3 class="h3o">Results<a href="#results">¶</a></h3>
+						<p id="results_real">Please complete the above questions and click the `Score` button to process results.</p>
+						<p id="results_copy" hidden><button onclick="copyResultToClipboard()">Copy to clipboard</button></p>
+						<hr>
+						<p id="results_possible">The possible severities are: normal (0+), mild-to-moderate fatigue (22+), severe fatigue (35+).<br>The max possible score is 50.</p>
+					</div>
+				</div>
+<script>
+const testForm = document.getElementById('questions_real');
+testForm.addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	let finalScore = 0;
+	let scoreMental = 0;
+	let scorePhysical = 0;
+	var data = new FormData(testForm);
+	for (var [key, value] of data) {
+		finalScore += +value;
+		if(value === "1") {
+			if(key === "q3" || key === "q6" || key === "q7" || key === "q8" || key === "q9") { scoreMental++; }
+			if(key === "q1" || key === "q2" || key === "q4" || key === "q5" || key === "q10") { scorePhysical++; }
+		}
+	}
+
+	let finalSeverity = "normal";
+	if(finalScore >= 35) {
+		finalSeverity = "severe fatigue";
+	} else if(finalScore >= 22) {
+		finalSeverity = "mild-to-moderate fatigue";
+	}
+
+	let finalResult = "Test: FAS, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
+	finalResult += " - Score Breakdown: Mental fatigue: " + scoreMental + ", Physical fatigue: " + scorePhysical;
+	document.getElementById('results_real').innerHTML=finalResult;
+	document.getElementById('results_copy').hidden=false;
+});
+
+function copyResultToClipboard() {
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML);
+}
+</script>

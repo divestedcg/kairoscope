@@ -1,0 +1,127 @@
+				<div class="card fluid" id="phq-9" data-pagefind-ignore="all">
+					<h2 class="h2o">Patient Health Questionnaire-9 (PHQ-9)</h2>
+					<ul>
+						<li>Summary from <a href="https://en.wikipedia.org/wiki/PHQ-9" target="_blank" rel="nofollow noopener noreferrer">Wikipedia</a>: The nine-item Patient Health Questionnaire (PHQ-9) is a depressive symptom scale and diagnostic tool introduced in 2001 to screen adult patients in primary care settings. The instrument assesses for the presence and severity of depressive symptoms and a possible depressive disorder.</li>
+						<li>Author: Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke, and colleagues</li>
+						<li>License: "Content found at the PHQ Screeners site is expressly exempted from Pfizer’s general copyright restrictions; content found on the PHQ Screeners site is free for download and use as stated within the PHQ Screeners site."</li>
+						<li>Sources: <a href="https://www.phqscreeners.com/" target="_blank" rel="nofollow noopener noreferrer">overview</a>, <a href="https://www.phqscreeners.com/images/sites/g/files/g10060481/f/201412/PHQ-9_English.pdf" target="_blank" rel="nofollow noopener noreferrer">test</a>, <a href="https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf" target="_blank" rel="nofollow noopener noreferrer">instructions</a></li>
+						<li>Last updated: 2025/05/28</li>
+					</ul>
+					<div class="section" id="questions">
+						<h3 class="h3o">Questions<a href="#questions">¶</a></h3>
+						<p>Over the last 2 weeks, how often have you been bothered by any of the following problems?</p>
+						<form id="questions_real">
+							<p>1. Little interest or pleasure in doing things<br>
+							<input type="radio" name="q1" value="0" required> not at all<br>
+							<input type="radio" name="q1" value="1" required> several days<br>
+							<input type="radio" name="q1" value="2" required> more than half the days<br>
+							<input type="radio" name="q1" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>2. Feeling down, depressed, or hopeless<br>
+							<input type="radio" name="q2" value="0" required> not at all<br>
+							<input type="radio" name="q2" value="1" required> several days<br>
+							<input type="radio" name="q2" value="2" required> more than half the days<br>
+							<input type="radio" name="q2" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>3. Trouble falling or staying asleep, or sleeping too much<br>
+							<input type="radio" name="q3" value="0" required> not at all<br>
+							<input type="radio" name="q3" value="1" required> several days<br>
+							<input type="radio" name="q3" value="2" required> more than half the days<br>
+							<input type="radio" name="q3" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>4. Feeling tired or having little energy<br>
+							<input type="radio" name="q4" value="0" required> not at all<br>
+							<input type="radio" name="q4" value="1" required> several days<br>
+							<input type="radio" name="q4" value="2" required> more than half the days<br>
+							<input type="radio" name="q4" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>5. Poor appetite or overeating<br>
+							<input type="radio" name="q5" value="0" required> not at all<br>
+							<input type="radio" name="q5" value="1" required> several days<br>
+							<input type="radio" name="q5" value="2" required> more than half the days<br>
+							<input type="radio" name="q5" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>6. Feeling bad about yourself — or that you are a failure or have let yourself or your family down<br>
+							<input type="radio" name="q6" value="0" required> not at all<br>
+							<input type="radio" name="q6" value="1" required> several days<br>
+							<input type="radio" name="q6" value="2" required> more than half the days<br>
+							<input type="radio" name="q6" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>7. Trouble concentrating on things, such as reading the newspaper or watching television<br>
+							<input type="radio" name="q7" value="0" required> not at all<br>
+							<input type="radio" name="q7" value="1" required> several days<br>
+							<input type="radio" name="q7" value="2" required> more than half the days<br>
+							<input type="radio" name="q7" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual<br>
+							<input type="radio" name="q8" value="0" required> not at all<br>
+							<input type="radio" name="q8" value="1" required> several days<br>
+							<input type="radio" name="q8" value="2" required> more than half the days<br>
+							<input type="radio" name="q8" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<p>9. Thoughts that you would be better off dead or of hurting yourself in some way<br>
+							<input type="radio" name="q9" value="0" required> not at all<br>
+							<input type="radio" name="q9" value="1" required> several days<br>
+							<input type="radio" name="q9" value="2" required> more than half the days<br>
+							<input type="radio" name="q9" value="3" required> nearly every day
+							</p>
+							<hr>
+
+							<input type="submit" value="Score">
+						</form>
+					</div>
+					<div class="section" id="results">
+						<h3 class="h3o">Results<a href="#results">¶</a></h3>
+						<p id="results_real">Please complete the above questions and click the `Score` button to process results.</p>
+						<p id="results_copy" hidden><button onclick="copyResultToClipboard()">Copy to clipboard</button></p>
+						<hr>
+						<p id="results_possible">The possible severities are: none (0+), mild (5+), moderate (10+), moderately severe (15+), severe (20+).<br>The max possible score is 27.</p>
+					</div>
+				</div>
+<script>
+const testForm = document.getElementById('questions_real');
+testForm.addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	let finalScore = 0;
+	var data = new FormData(testForm);
+	for (var [key, value] of data) {
+		finalScore += +value;
+	}
+
+	let finalSeverity = "none";
+	if(finalScore >= 20) {
+		finalSeverity = "severe";
+	} else if(finalScore >= 15) {
+		finalSeverity = "moderately severe";
+	} else if(finalScore >= 10) {
+		finalSeverity = "moderate";
+	} else if(finalScore >= 5) {
+		finalSeverity = "mild";
+	}
+
+	let finalResult = "Test: PHQ-9, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
+	document.getElementById('results_real').innerHTML=finalResult;
+	document.getElementById('results_copy').hidden=false;
+});
+
+function copyResultToClipboard() {
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML);
+}
+</script>

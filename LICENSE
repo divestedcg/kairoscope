@@ -6,6 +6,7 @@ If you've found an issue please file an issue or pull request.
 
 assets/css/mini-*.min.css - MIT - v3.0.1 - https://github.com/Chalarangelo/mini.css
 assets/fonts/fira* - OFL - https://github.com/mozilla/Fira
+stubs/screener_*.html - All tests are the sole ownership of their respective authors noted in each file.
 [EVERYTHING ELSE] - AGPL-3.0-or-later
 
 Please see the included LICENSE.* files for the corresponding full license texts.

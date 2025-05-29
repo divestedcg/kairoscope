@@ -1,0 +1,7 @@
+							<p>1. <br>
+							<input type="radio" name="q1" value="0" required> strongly disagree<br>
+							<input type="radio" name="q1" value="0" required> slightly disagree<br>
+							<input type="radio" name="q1" value="1" required> slightly agree<br>
+							<input type="radio" name="q1" value="2" required> strongly agree
+							</p>
+							<hr>

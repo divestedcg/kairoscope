@@ -234,7 +234,7 @@ testForm.addEventListener('submit', function(event) {
 		finalScore += +value;
 	}
 
-	let finalSeverity = "none";
+	let finalSeverity = "TODO";
 
 	let finalResultSimple = "Test: ESQ-R, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
 	let finalResultPretty = finalResultSimple.replace(", Date:", "<br>&emsp;Date:").replace(/,\ /g, "<br>&emsp;");

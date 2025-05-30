@@ -281,10 +281,10 @@ testForm.addEventListener('submit', function(event) {
 });
 
 function copyResultToClipboardSimple() {
-	 navigator.clipboard.writeText(document.getElementById('results_real_simple').innerHTML);
+	 navigator.clipboard.writeText(document.getElementById('results_real_simple').innerHTML.replace(/&amp;/g, "&"));
 }
 
 function copyResultToClipboardPretty() {
-	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML.replace(/<br>/g, "\n").replace(/&emsp;/g, "\t"));
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML.replace(/<br>/g, "\n").replace(/&emsp;/g, "\t").replace(/&amp;/g, "&"));
 }
 </script>

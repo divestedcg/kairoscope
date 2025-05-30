@@ -179,7 +179,8 @@
 					<div class="section" id="results">
 						<h3 class="h3o">Results<a href="#results">¶</a></h3>
 						<p id="results_real">Please complete the above questions and click the `Score` button to process results.</p>
-						<p id="results_copy" hidden><button onclick="copyResultToClipboard()">Copy to clipboard</button></p>
+						<p id="results_real_simple" hidden></p>
+						<p id="results_copy" hidden>Copy results: <button onclick="copyResultToClipboardSimple()">one-liner</button><button onclick="copyResultToClipboardPretty()">pretty-printed</button></p>
 						<hr>
 						<p id="results_possible">The possible severities are: none (0+), low (<=30), mild to moderate (31+), high (40+), very high (50+).<br>The max possible score is 72. A higher score is worse.</p>
 					</div>
@@ -230,13 +231,21 @@ testForm.addEventListener('submit', function(event) {
 		scoreB += " (low)";
 	}
 
-	let finalResult = "Test: ASRS, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
-	finalResult += " - Score Breakdown: Criterion Part A: " + scoreA + ", Additional Symptoms Part B: " + scoreB;
-	document.getElementById('results_real').innerHTML=finalResult;
+	let finalResultSimple = "Test: ASRS, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
+	let breakdown = " - Score Breakdown: Criterion Part A: " + scoreA + ", Additional Symptoms Part B: " + scoreB;
+	let finalResultPretty = finalResultSimple.replace(", Date:", "<br>&emsp;Date:").replace(/,\ /g, "<br>&emsp;");
+	finalResultSimple += breakdown;
+	finalResultPretty += breakdown.replace(" - Score Breakdown: ", "<br>&emsp;Score Breakdown: <br>&emsp;&emsp;").replace(/,\ /g, "<br>&emsp;&emsp;");
+	document.getElementById('results_real').innerHTML=finalResultPretty;
+	document.getElementById('results_real_simple').innerHTML=finalResultSimple;
 	document.getElementById('results_copy').hidden=false;
 });
 
-function copyResultToClipboard() {
-	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML);
+function copyResultToClipboardSimple() {
+	 navigator.clipboard.writeText(document.getElementById('results_real_simple').innerHTML);
+}
+
+function copyResultToClipboardPretty() {
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML.replace(/<br>/g, "\n").replace(/&emsp;/g, "\t"));
 }
 </script>

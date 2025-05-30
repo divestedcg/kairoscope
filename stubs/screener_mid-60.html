@@ -952,13 +952,12 @@ testForm.addEventListener('submit', function(event) {
 	var data = new FormData(testForm);
 	for (var [key, value] of data) {
 		finalScore += +value;
-		//TODO subscales
 	}
-	finalScore = (finalScore / 60);
+	finalScore = ((100/600) * finalScore);
 
 	let finalSeverity = "Does not have dissociative experiences";
 	if(finalScore >= 64) {
-		finalSeverity = "Severe dissociative and post-traumatic symptoms. High scores may also reflect neuroticism, attention seeking behaviour, exaggeration or malingering of symptoms, or psychosis";
+		finalSeverity = "Severe dissociative and post-traumatic symptoms. High scores may also reflect neuroticism,&nbsp;attention seeking behaviour,&nbsp;exaggeration or malingering of symptoms,&nbsp;or psychosis";
 	} else if(finalScore >= 41) {
 		finalSeverity = "Probably has DID or a severe dissociative disorder and PTSD";
 	} else if(finalScore >= 31) {
@@ -966,15 +965,13 @@ testForm.addEventListener('submit', function(event) {
 	} else if(finalScore >= 21) {
 		finalSeverity = "May have dissociative disorder and/or PTSD";
 	} else if(finalScore >= 15) {
-		finalSeverity = "Mild dissociative symptoms and experiences. PTSD or a mild dissociative disorder (such as dissociative amnesia, depersonalisation / derealisation disorder) are possible";
+		finalSeverity = "Mild dissociative symptoms and experiences. PTSD or a mild dissociative disorder (such as dissociative amnesia,&nbsp;depersonalisation / derealisation disorder) are possible";
 	} else if(finalScore >= 7) {
 		finalSeverity = "Has few diagnostically significant dissociative experiences";
 	}
 
-	//TODO subscales
-
 	let finalResultSimple = "Test: MID-60, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
-	let finalResultPretty = finalResultSimple.replace(", Date:", "\n\tDate:").replace(", ", "\n\t");
+	let finalResultPretty = finalResultSimple.replace(", Date:", "<br>&emsp;Date:").replace(/,\ /g, "<br>&emsp;");
 	document.getElementById('results_real').innerHTML=finalResultPretty;
 	document.getElementById('results_real_simple').innerHTML=finalResultSimple;
 	document.getElementById('results_copy').hidden=false;
@@ -985,6 +982,6 @@ function copyResultToClipboardSimple() {
 }
 
 function copyResultToClipboardPretty() {
-	 navigator.clipboard.writeText(document.getElementById('results_real_pretty').innerHTML);
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML.replace(/<br>/g, "\n").replace(/&emsp;/g, "\t"));
 }
 </script>

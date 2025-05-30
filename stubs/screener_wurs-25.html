@@ -242,7 +242,8 @@
 					<div class="section" id="results">
 						<h3 class="h3o">Results<a href="#results">¶</a></h3>
 						<p id="results_real">Please complete the above questions and click the `Score` button to process results.</p>
-						<p id="results_copy" hidden><button onclick="copyResultToClipboard()">Copy to clipboard</button></p>
+						<p id="results_real_simple" hidden></p>
+						<p id="results_copy" hidden>Copy results: <button onclick="copyResultToClipboardSimple()">one-liner</button><button onclick="copyResultToClipboardPretty()">pretty-printed</button></p>
 						<hr>
 						<p id="results_possible">The possible severities are: none (0+), consistent with ADHD (36+).<br>The max possible score is 100. A higher score is worse.</p>
 					</div>
@@ -269,13 +270,21 @@ testForm.addEventListener('submit', function(event) {
 		finalSeverity = "consistent with ADHD";
 	}
 
-	let finalResult = "Test: WURS-25, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
-	finalResult += " - Score Breakdown: Impulsivity & Behavioural problems: " + scoreImpulsive + ", Inattentiveness & School problems: " + scoreInattentive + ", Self Esteem & Negative mood: " + scoreMood;
-	document.getElementById('results_real').innerHTML=finalResult;
+	let finalResultSimple = "Test: WURS-25, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
+	let breakdown = " - Score Breakdown: Impulsivity & Behavioural problems: " + scoreImpulsive + ", Inattentiveness & School problems: " + scoreInattentive + ", Self Esteem & Negative mood: " + scoreMood;
+	let finalResultPretty = finalResultSimple.replace(", Date:", "<br>&emsp;Date:").replace(/,\ /g, "<br>&emsp;");
+	finalResultSimple += breakdown;
+	finalResultPretty += breakdown.replace(" - Score Breakdown: ", "<br>&emsp;Score Breakdown: <br>&emsp;&emsp;").replace(/,\ /g, "<br>&emsp;&emsp;");
+	document.getElementById('results_real').innerHTML=finalResultPretty;
+	document.getElementById('results_real_simple').innerHTML=finalResultSimple;
 	document.getElementById('results_copy').hidden=false;
 });
 
-function copyResultToClipboard() {
-	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML);
+function copyResultToClipboardSimple() {
+	 navigator.clipboard.writeText(document.getElementById('results_real_simple').innerHTML);
+}
+
+function copyResultToClipboardPretty() {
+	 navigator.clipboard.writeText(document.getElementById('results_real').innerHTML.replace(/<br>/g, "\n").replace(/&emsp;/g, "\t"));
 }
 </script>

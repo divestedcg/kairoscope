@@ -1,0 +1,8 @@
+- Add more tests
+- Add the test summaries
+- Add real world example results section
+- Replace AI generated text with that of a human, preferably a medical professional
+- Make a score analyzer/aggregator?
+- ESQ-R: calculate the score
+- VOCI: calculate the severity
+- MID-60: calculate the subscales

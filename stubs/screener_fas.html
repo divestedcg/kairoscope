@@ -124,10 +124,8 @@ testForm.addEventListener('submit', function(event) {
 	var data = new FormData(testForm);
 	for (var [key, value] of data) {
 		finalScore += +value;
-		if(value === "1") {
-			if(key === "q3" || key === "q6" || key === "q7" || key === "q8" || key === "q9") { scoreMental++; }
-			if(key === "q1" || key === "q2" || key === "q4" || key === "q5" || key === "q10") { scorePhysical++; }
-		}
+		if(key === "q3" || key === "q6" || key === "q7" || key === "q8" || key === "q9") { scoreMental += +value; }
+		if(key === "q1" || key === "q2" || key === "q4" || key === "q5" || key === "q10") { scorePhysical += +value; }
 	}
 
 	let finalSeverity = "normal";

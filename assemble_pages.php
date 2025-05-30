@@ -16,7 +16,6 @@
 
 //General
 $SBNR_GEN_DARKMODE = false;
-$VIDEOS_SAVE_DATA = true;
 
 //Utils
 //Credit (CC BY-SA 3.0): https://stackoverflow.com/a/6225706 https://stackoverflow.com/a/10423788

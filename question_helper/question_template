@@ -1,14 +1,14 @@
 							<p>1. <br>
-							<label><input type="radio" name="q1" value="0" required> 0%</label><br>
-							<label><input type="radio" name="q1" value="10" required> 10%</label><br>
-							<label><input type="radio" name="q1" value="20" required> 20%</label><br>
-							<label><input type="radio" name="q1" value="30" required> 30%</label><br>
-							<label><input type="radio" name="q1" value="40" required> 40%</label><br>
-							<label><input type="radio" name="q1" value="50" required> 50%</label><br>
-							<label><input type="radio" name="q1" value="60" required> 60%</label><br>
-							<label><input type="radio" name="q1" value="70" required> 70%</label><br>
-							<label><input type="radio" name="q1" value="80" required> 80%</label><br>
-							<label><input type="radio" name="q1" value="90" required> 90%</label><br>
-							<label><input type="radio" name="q1" value="100" required> 100%</label>
+							<label><input type="radio" name="q1" value="0" required> 0</label><br>
+							<label><input type="radio" name="q1" value="1" required> 1</label><br>
+							<label><input type="radio" name="q1" value="2" required> 2</label><br>
+							<label><input type="radio" name="q1" value="3" required> 3</label><br>
+							<label><input type="radio" name="q1" value="4" required> 4</label><br>
+							<label><input type="radio" name="q1" value="5" required> 5</label><br>
+							<label><input type="radio" name="q1" value="6" required> 6</label><br>
+							<label><input type="radio" name="q1" value="7" required> 7</label><br>
+							<label><input type="radio" name="q1" value="8" required> 8</label><br>
+							<label><input type="radio" name="q1" value="9" required> 9</label><br>
+							<label><input type="radio" name="q1" value="10" required> 10</label>
 							</p>
 							<hr>

@@ -26,7 +26,7 @@
 							</p>
 							<hr>
 
-							<p>2. Having an emotion (e.g., fear, sadness, anger, happiness) that doesn't feel like it is "yours.")<br>
+							<p>2. Having an emotion (e.g., fear, sadness, anger, happiness) that doesn't feel like it is "yours."<br>
 							<label><input type="radio" name="q2" value="0" required> 0</label><br>
 							<label><input type="radio" name="q2" value="1" required> 1</label><br>
 							<label><input type="radio" name="q2" value="2" required> 2</label><br>
@@ -970,7 +970,7 @@ testForm.addEventListener('submit', function(event) {
 		finalSeverity = "Has few diagnostically significant dissociative experiences";
 	}
 
-	let finalResultSimple = "Test: MID-60, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore + ", Severity: " + finalSeverity;
+	let finalResultSimple = "Test: MID-60, Date: " + new Date().toISOString().slice(0, 10) + ", Score: " + finalScore.toFixed(3) + ", Severity: " + finalSeverity;
 	let finalResultPretty = finalResultSimple.replace(", Date:", "<br>&emsp;Date:").replace(/,\ /g, "<br>&emsp;");
 	document.getElementById('results_real').innerHTML=finalResultPretty;
 	document.getElementById('results_real_simple').innerHTML=finalResultSimple;

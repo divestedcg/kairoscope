@@ -24,9 +24,16 @@
 								new PagefindUI({ element: "#search", showImages: false, showSubResults: true });
 							});
 						} else {
-							document.write("<p>WebAssembly appears disabled!<br><ul><li>Firefox & Mull: Set <code>javascript.options.wasm</code> to true via <code>about:config</code>.</li><li>Mulch: Tap the Lock in the URL bar, then Permissions, and allow `JavaScript JIT`.</li><li>Tor Browser: Use the `Standard` security level.</li></ul></p>");
+							document.write("<p>WebAssembly appears disabled!</p><ul><li>Firefox & Mull: Set <code>javascript.options.wasm</code> to true via <code>about:config</code>.</li><li>Mulch: Tap the Lock in the URL bar, then Permissions, and allow `JavaScript JIT`.</li><li>Tor Browser: Use the `Standard` security level.</li></ul>");
 						}
-						</script><noscript><p>JavaScript appears disabled!<br><ul><li>Chromium & Mulch: Tap the lock in the URL bar, then Permissions, and allow `JavaScript`.</li><li>Tor Browser: Use the `Standard` security level.</li></ul></p></noscript>
+						</script>
+						<noscript>
+							<p>JavaScript appears disabled!</p>
+							<ul>
+								<li>Chromium & Mulch: Tap the lock in the URL bar, then Permissions, and allow `JavaScript`.</li>
+								<li>Tor Browser: Use the `Standard` security level.</li>
+							</ul>
+						</noscript>
 					</div>
 					<div class="section" id="thirdPartySearch">
 						<h3>Third Party Search<a href="#thirdPartySearch">¶</a></h3>

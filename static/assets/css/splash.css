@@ -47,3 +47,9 @@ p.splash {
   font-size: 4vmin;
   color: #212121;
 }
+
+@media (prefers-color-scheme: dark) {
+p.splash {
+   color: #FFFFFF;
+}
+}

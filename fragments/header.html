@@ -3,19 +3,32 @@
 	<head>
 		<title><?php $title=ucwords(str_replace("_", " ", $pageRaw)); if(str_starts_with($title, "Screener ")){ $title="Screener " . strtoupper(substr($title, 9)); } if(strlen($title) > 0) { print($title . " - "); } ?>Kairoscope</title>
 		<meta charset="utf-8">
-		<meta name="theme-color" content="#212121">
+		<meta name="theme-color" content="#4A148C">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="/images/favicon.png" rel="shortcut icon" type="image/png">
 		<link rel="stylesheet" href="/assets/css/fira.css" integrity="sha384-qs2nxaQtWaoeQTWy2qEK+yb/3Yd56H3wS7l0unGiJG0O5MVvbVzIZgzdd0Q1iFFP">
 		<?php
+			$rel = 'rel="stylesheet"';
+			$prefersLight = 'media="screen and (prefers-color-scheme: light)"';
+			$prefersDark = 'media="screen and (prefers-color-scheme: dark)"';
 			$lightTheme = '<link rel="stylesheet" href="/assets/css/mini-default.min.css" integrity="sha384-grfnlbFNIiMDbCsJPG8vpNan6LXDYRloFcUlQIoW/t6XRE+tbZtlffNIRcIuq96o">' . PHP_EOL;
 			$darkTheme = '<link rel="stylesheet" href="/assets/css/mini-dark.min.css" integrity="sha384-Ea4sveuxxdZqzlfaDF0+BttWvyhbyRMMQzOVgvZH83dXvg0WNWa6AGdE07uI0VhC">' . PHP_EOL;
 			$splashCSS = '<link rel="stylesheet" href="/assets/css/splash.css" integrity="sha384-lWEjcVvj28KjTurseMoONHV+l7Q+RCTWBi6NlHfPyVaBzQ9MdEGeYkovrgPvSyqg">' . PHP_EOL;
 			$splashCSSDark = '<link rel="stylesheet" href="/assets/css/splash-dark.css" integrity="sha384-kjH8ChwGnST1qF8k/QfN47jmEU+6v8Vvf6tTT+bVYS1uqFEajbfV0gbCe36YJScA">' . PHP_EOL;
+			$searchDark = '<link rel="stylesheet" href="/assets/css/search-dark.css" integrity="sha384-R2/RnRe/M2TBebdITZco9IErfWNrG9ik0VNZ4Ucqy492wY8Bd7xgoEbAC0kRhzps">' . PHP_EOL;
 
-			if(($SBNR_GEN_DARKMODE) && $pageRaw !== "search") {
+			if($SBNR_GEN_DARKMODE_FORCED) {
 				print($darkTheme);
 				if($pageIsHome) { print($splashCSSDark); }
+				if($pageRaw === "search") { print($searchDark); }
+			} else if ($SBNR_GEN_DARKMODE_AUTO) {
+				print(str_replace($rel, $rel . ' ' . $prefersLight, $lightTheme));
+				print(str_replace($rel, $rel . ' ' . $prefersDark, $darkTheme));
+				if($pageIsHome) {
+					print(str_replace($rel, $rel . ' ' . $prefersLight, $splashCSS));
+					print(str_replace($rel, $rel . ' ' . $prefersDark, $splashCSSDark));
+				}
+				if($pageRaw === "search") { print(str_replace($rel, $rel . ' ' . $prefersDark, $searchDark)); }
 			} else {
 				print($lightTheme);
 				if($pageIsHome) { print($splashCSS); }

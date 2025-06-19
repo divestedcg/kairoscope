@@ -15,7 +15,8 @@
 //along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 //General
-$SBNR_GEN_DARKMODE = false;
+$SBNR_GEN_DARKMODE_FORCED = false;
+$SBNR_GEN_DARKMODE_AUTO = true;
 
 //Utils
 //Credit (CC BY-SA 3.0): https://stackoverflow.com/a/6225706 https://stackoverflow.com/a/10423788

@@ -13,6 +13,8 @@
 #You should have received a copy of the GNU Affero General Public License
 #along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+shopt -s expand_aliases
+
 rm -rf output;
 cp -r --reflink=auto static output;
 mkdir output/pages;

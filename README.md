@@ -14,3 +14,8 @@ Compiling
 ```
 sh generate.sh #assemble everything
 ```
+
+Credits
+-------
+- @eqilnou for corrections
+- @gpnos for corrections

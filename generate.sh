@@ -33,7 +33,7 @@ else
 	alias fjnn='';
 fi;
 
-declare -a staticPages=("home" "privacy_policy" "terms_of_service" "search" "screener_aq" "screener_phq-9" "screener_phq-15" "screener_gad-7" "screener_pq-b" "screener_cat-q" "screener_tas" "screener_raads-r" "screener_asrs" "screener_mdq" "screener_asa-27" "screener_bsl-23" "screener_fas" "screener_thi" "screener_acos-self" "screener_eq-40" "screener_wurs-25" "screener_bes" "screener_oci-r" "screener_voci" "screener_des-ii" "screener_mid-60");
+declare -a staticPages=("home" "privacy_policy" "terms_of_service" "search" "screener_aq" "screener_phq-9" "screener_phq-15" "screener_gad-7" "screener_pq-b" "screener_cat-q" "screener_tas" "screener_raads-r" "screener_asrs" "screener_mdq" "screener_asa-27" "screener_bsl-23" "screener_fas" "screener_thi" "screener_acos-self" "screener_eq-40" "screener_wurs-25" "screener_bes" "screener_oci-r" "screener_voci" "screener_des-ii" "screener_mid-60" "screener_ugds-gs");
 
 for page in "${staticPages[@]}"
 do

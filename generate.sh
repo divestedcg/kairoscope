@@ -26,14 +26,8 @@ else
        alias asmpage='php assemble_pages.php';
 fi;
 
-#helper
-if command -v firejail &> /dev/null; then
-	alias fjnn='firejail --net=none';
-else
-	alias fjnn='';
-fi;
 
-declare -a staticPages=("home" "privacy_policy" "terms_of_service" "search" "screener_aq" "screener_phq-9" "screener_phq-15" "screener_gad-7" "screener_pq-b" "screener_cat-q" "screener_tas" "screener_raads-r" "screener_asrs" "screener_mdq" "screener_asa-27" "screener_bsl-23" "screener_fas" "screener_thi" "screener_acos-self" "screener_eq-40" "screener_wurs-25" "screener_bes" "screener_oci-r" "screener_voci" "screener_des-ii" "screener_mid-60" "screener_ugds-gs");
+declare -a staticPages=("home" "privacy_policy" "terms_of_service" "screener_aq" "screener_phq-9" "screener_phq-15" "screener_gad-7" "screener_pq-b" "screener_cat-q" "screener_tas" "screener_raads-r" "screener_asrs" "screener_mdq" "screener_asa-27" "screener_bsl-23" "screener_fas" "screener_thi" "screener_acos-self" "screener_eq-40" "screener_wurs-25" "screener_bes" "screener_oci-r" "screener_voci" "screener_des-ii" "screener_mid-60" "screener_ugds-gs");
 
 for page in "${staticPages[@]}"
 do
@@ -41,13 +35,9 @@ do
 done;
 wait;
 
-#gzip -k output/pages/*.html output/assets/css/*.css output/assets/js/*.js;
-#brotli -k output/pages/*.html output/assets/css/*.css output/assets/js/*.js;
+#wait;
+#gzip --keep --best --suffix .pgz output/pages/*.html output/assets/css/*.css &
+#brotli --keep --best output/pages/*.html output/assets/css/*.css &
+#zstdmt --keep -19 output/pages/*.html output/assets/css/*.css &
 
 ln -sf pages/home.html output/index.html;
-
-if command -v pagefind &> /dev/null; then
-	fjnn pagefind --site output/pages;
-else
-	echo "pagefind is unavailable, not generating search index"
-fi;

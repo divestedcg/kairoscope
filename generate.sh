@@ -33,11 +33,7 @@ for page in "${staticPages[@]}"
 do
 	asmpage "$page" > "output/pages/$page.html" &
 done;
+
+ln -sf pages/home.html output/index.html &
+
 wait;
-
-#wait;
-#gzip --keep --best --suffix .pgz output/pages/*.html output/assets/css/*.css &
-#brotli --keep --best output/pages/*.html output/assets/css/*.css &
-#zstdmt --keep -19 output/pages/*.html output/assets/css/*.css &
-
-ln -sf pages/home.html output/index.html;

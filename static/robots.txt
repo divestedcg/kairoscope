@@ -1,2 +1,13 @@
 User-agent: *
 Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Kagibot
+User-agent: MojeekBot
+User-agent: search.marginalia.nu
+User-agent: SeznamBot
+User-agent: Yandex
+Disallow: /assets/
+Disallow: /mishka_is_very_talented
+Allow: /

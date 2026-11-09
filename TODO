@@ -1,7 +1,7 @@
 - Add more tests
 - Add the test summaries
 - Add real world example results section
-- Replace AI generated text with that of a human, preferably a medical professional
+- Replace grabbers with those from a medical professional
 - Make a score analyzer/aggregator?
 - ESQ-R: calculate the score
 - VOCI: calculate the severity
